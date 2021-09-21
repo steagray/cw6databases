@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock x:Name="dataBlock" HorizontalAlignment="Left" Margin="159,103,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <Button x:Name="dataButton" Content="Button" HorizontalAlignment="Left" Margin="562,148,0,0" VerticalAlignment="Top" Width="75" Click="dataButton_Click"/>
+        <TextBlock x:Name="dataBlock" HorizontalAlignment="Left" Margin="29,24,0,0" TextWrapping="Wrap" Text="Asset Output" VerticalAlignment="Top"/>
+        <Button x:Name="dataButton" Content="Button" HorizontalAlignment="Left" Margin="107,23,0,0" VerticalAlignment="Top" Width="75" Click="dataButton_Click"/>
+        <TextBlock x:Name="employeeBlock" HorizontalAlignment="Left" Margin="484,24,0,0" TextWrapping="Wrap" Text="Employee Output" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="employeeButton" Content="Button" HorizontalAlignment="Left" Margin="630,24,0,0" VerticalAlignment="Top" Width="75" Click="employeeButton_Click"/>
 
     </Grid>
 </Window>

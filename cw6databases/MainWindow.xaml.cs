@@ -25,7 +25,7 @@ namespace cw6databases
         public MainWindow()
         {
             InitializeComponent();
-            cn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source =| DataDirectory |\\cw6db.accdb");
+            cn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\\cw6db.accdb");
         }
 
         private void dataButton_Click(object sender, RoutedEventArgs e)
@@ -40,6 +40,22 @@ namespace cw6databases
                 data += read[0].ToString() + "\n";
             }
             dataBlock.Text = data;
+            cn.Close();
+        }
+
+        private void employeeButton_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "select * from Employees";
+            OleDbCommand cmd = new OleDbCommand(query, cn);
+            cn.Open();
+            OleDbDataReader read = cmd.ExecuteReader();
+            string data = "";
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\n";
+            }
+            employeeBlock.Text = data;
+            cn.Close();
         }
     }
 }
