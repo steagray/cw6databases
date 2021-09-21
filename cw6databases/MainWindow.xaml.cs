@@ -39,6 +39,30 @@ namespace cw6databases
             {
                 data += read[0].ToString() + "\n";
             }
+            cn.Close();
+
+            data += "----------\n";
+
+            string query2 = "select AssetID from Assets";
+            OleDbCommand cmd2 = new OleDbCommand(query2, cn);
+            cn.Open();
+            read = cmd2.ExecuteReader(); 
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\n";
+            }
+            cn.Close();
+
+            data += "----------\n";
+
+            string query3 = "select Description from Assets";
+            OleDbCommand cmd3 = new OleDbCommand(query3, cn);
+            cn.Open();
+            read = cmd3.ExecuteReader();
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\n";
+            }
             dataBlock.Text = data;
             cn.Close();
         }
@@ -50,6 +74,26 @@ namespace cw6databases
             cn.Open();
             OleDbDataReader read = cmd.ExecuteReader();
             string data = "";
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\n";
+            }
+            cn.Close();
+
+            string query2 = "select [Last Name] from Employees";
+            OleDbCommand cmd2 = new OleDbCommand(query2, cn);
+            cn.Open();
+            read = cmd2.ExecuteReader();
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\n";
+            }
+            cn.Close();
+
+            string query3 = "select [First Name] from Employees";
+            OleDbCommand cmd3 = new OleDbCommand(query3, cn);
+            cn.Open();
+            read = cmd3.ExecuteReader();
             while (read.Read())
             {
                 data += read[0].ToString() + "\n";
